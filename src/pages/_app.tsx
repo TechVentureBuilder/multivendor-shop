@@ -34,7 +34,7 @@ function CustomApp({
 
     return (
         <div dir={dir}>
-            <NextNProgress  color={`rgb(249, 58, 11)`} height={3}/>
+            <NextNProgress color={`rgb(249, 58, 11)`} height={3}/>
             <SessionProvider session={session}>
                 <QueryProvider pageProps={pageProps}>
                     <SearchProvider>
