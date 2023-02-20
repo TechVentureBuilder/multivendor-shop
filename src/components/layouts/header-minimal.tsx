@@ -32,6 +32,11 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
 
   return (
     <header className={cn('site-header-with-search h-14 md:h-16 lg:h-22')}>
+      <div className="topbar">
+        <div className="container mx-auto">
+          <GroupsDropdownMenu variant="list" />
+        </div>
+      </div>
       <div
         className={cn(
           'fixed z-50 flex h-14 w-full items-center justify-between border-b border-border-200 bg-light px-4 py-5  shadow-sm transition-transform duration-300 md:h-16 lg:h-22 ltr:lg:pl-12 ltr:lg:pr-8 rtl:lg:pr-12 rtl:lg:pl-8',
