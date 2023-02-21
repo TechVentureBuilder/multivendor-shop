@@ -7,20 +7,19 @@ import type { Banner } from '@/types';
 
 interface BannerProps {
   banners: Banner[] | undefined;
-  layout?: string;
-  slug?: string;
 }
 
-const BannerWithPagination: React.FC<BannerProps> = ({ banners, slug }) => {
-  return (
+const BannerWithStaticImage: React.FC<BannerProps> = ({ banners }) => {
+    console.log(banners)
+    return (
     <div className="compact relative">
       <div className="-z-1 overflow-hidden rounded-xl">
         <div className="relative">
           <Swiper
             id="banner"
             loop={
-              // @ts-ignore
-            banners?.length > 1 ? true : false
+                // @ts-ignore
+              banners?.length > 1 ? true : false
           }
             modules={[Pagination, Autoplay]}
             resizeObserver={true}
@@ -41,15 +40,15 @@ const BannerWithPagination: React.FC<BannerProps> = ({ banners, slug }) => {
           >
             {banners?.map((banner, idx) => (
               <SwiperSlide key={idx}>
-                <Link href={`/${slug}${Routes.search}`}>
+                <Link href={`/${banner.slug}${Routes.search}`}>
                   <div className="relative h-full max-h-[240px] w-full md:max-h-[610px]">
                     <Image
                       className="h-full w-full object-cover object-center"
-                      src={banner.image?.original ?? productPlaceholder}
+                      src={banner.image ?? productPlaceholder}
                       alt={banner.title ?? ''}
                       layout="responsive"
                       width={1800}
-                      height={610}
+                      height={800}
                     />
                   </div>
                 </Link>
@@ -62,4 +61,4 @@ const BannerWithPagination: React.FC<BannerProps> = ({ banners, slug }) => {
   );
 };
 
-export default BannerWithPagination;
+export default BannerWithStaticImage;

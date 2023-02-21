@@ -11,6 +11,9 @@ const BannerWithoutSlider = dynamic(
 const BannerWithPagination = dynamic(
   () => import('@/components/banners/banner-with-pagination')
 );
+const BannerWithStaticImage = dynamic(
+    () => import('@/components/banners/banner-with-static-image')
+);
 const MAP_BANNER_TO_GROUP: Record<string, any> = {
   classic: BannerWithSearch,
   modern: BannerShort,
@@ -18,6 +21,7 @@ const MAP_BANNER_TO_GROUP: Record<string, any> = {
   standard: BannerWithSearch,
   compact: BannerWithPagination,
   default: BannerWithSearch,
+  index: BannerWithStaticImage,
 };
 
 const Banner: React.FC<{ layout: string; variables: any }> = ({

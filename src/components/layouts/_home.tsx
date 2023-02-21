@@ -18,7 +18,7 @@ export default function HomeLayout({
   );
   return (
     <div className="flex flex-col min-h-screen transition-colors duration-150 bg-gray-100">
-      {['minimal', 'compact'].includes(layout) ? (
+      {['minimal', 'compact', 'default'].includes(layout) ? (
         <HeaderMinimal layout={layout} />
       ) : (
         <Header layout={layout} />

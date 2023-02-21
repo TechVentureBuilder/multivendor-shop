@@ -214,10 +214,12 @@ export interface Category {
 }
 
 export interface Banner {
+  // @ts-ignore
+  slug: any;
   id: string;
   title: string;
   description: string;
-  image: Attachment;
+  image: any;
 }
 
 export interface Type {

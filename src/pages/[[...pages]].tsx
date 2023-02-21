@@ -16,6 +16,7 @@ const CartCounterButton = dynamic(
     () => import('@/components/cart/cart-counter-button'),
     {ssr: false}
 );
+const Index = dynamic(() => import('@/components/layouts/index'));
 const Classic = dynamic(() => import('@/components/layouts/classic'));
 const Standard = dynamic(() => import('@/components/layouts/standard'));
 const Modern = dynamic(() => import('@/components/layouts/modern'));
@@ -28,7 +29,7 @@ const MAP_LAYOUT_TO_GROUP: Record<string, any> = {
     standard: Standard,
     minimal: Minimal,
     compact: Compact,
-    default: Classic,
+    default: Index,
 };
 const Home: NextPageWithLayout<
     InferGetStaticPropsType<typeof getStaticProps>
@@ -51,7 +52,7 @@ const Home: NextPageWithLayout<
         <>
             <Seo title={type?.name} url={type?.slug} images={type?.banners}/>
             <Component variables={variables}/>
-            {!['compact', 'minimal'].includes(layout) && width > 1023 && (
+            {!['compact', 'minimal', 'index'].includes(layout) && width > 1023 && (
                 // @ts-ignore
                 <CartCounterButton/>
             )}

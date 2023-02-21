@@ -57,13 +57,12 @@ export const getStaticProps: GetStaticProps<
   const { pages } = params!;
   let pageType: string | undefined;
   if (!pages) {
-    pageType =
-      types.find((type) => type?.settings?.isHome)?.slug ?? types?.[0]?.slug;
+    pageType = 'home';
   } else {
     pageType = pages[0];
   }
 
-  if (!types?.some((t) => t.slug === pageType)) {
+  if (!types?.some((t) => t.slug === pageType) && pageType !== 'home') {
     return {
       notFound: true,
       // This is require to regenerate the page
@@ -92,7 +91,7 @@ export const getStaticProps: GetStaticProps<
   };
 
   // Only prefetch popular products for `book` demo
-  if (pageType === 'book') {
+  if (pageType === 'men') {
     await queryClient.prefetchQuery(
       [API_ENDPOINTS.PRODUCTS_POPULAR, popularProductVariables],
       ({ queryKey }) =>

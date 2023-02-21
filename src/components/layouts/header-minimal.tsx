@@ -78,7 +78,7 @@ const HeaderMinimal = ({layout}: { layout: string }) => {
                                 />
                             </div>
                         )}
-                        {layout === 'compact' && (
+                        {(layout === 'compact' || layout === 'default') && (
                             <div
                                 className="mx-auto hidden w-full px-8 xl:flex xl:w-6/12 xl:px-10 xl:rtl:w-4/12 2xl:rtl:w-5/12">
                                 <SearchWithSuggestion
