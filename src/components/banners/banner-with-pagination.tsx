@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide, Pagination } from '@/components/ui/slider';
+import { Swiper, SwiperSlide, Pagination, Autoplay } from '@/components/ui/slider';
 import { Image } from '@/components/ui/image';
 import { productPlaceholder } from '@/lib/placeholders';
 import Link from '@/components/ui/link';
@@ -18,10 +18,14 @@ const BannerWithPagination: React.FC<BannerProps> = ({ banners, slug }) => {
         <div className="relative">
           <Swiper
             id="banner"
-            loop={true}
-            modules={[Pagination]}
+            loop={banners?.length > 1 ? true : false}
+            modules={[Pagination, Autoplay]}
             resizeObserver={true}
-            allowTouchMove={false}
+            autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+            }}
+            allowTouchMove={true}
             slidesPerView={1}
             // pagination={true}
             pagination={{
@@ -37,7 +41,7 @@ const BannerWithPagination: React.FC<BannerProps> = ({ banners, slug }) => {
                 <Link href={`/${slug}${Routes.search}`}>
                   <div className="relative h-full max-h-[240px] w-full md:max-h-[610px]">
                     <Image
-                      className="h-full w-full"
+                      className="h-full w-full object-cover object-center"
                       src={banner.image?.original ?? productPlaceholder}
                       alt={banner.title ?? ''}
                       layout="responsive"
