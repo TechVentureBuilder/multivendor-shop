@@ -5,12 +5,12 @@ import { avatarPlaceholder, productPlaceholder } from '@/lib/placeholders';
 import Link from '@/components/ui/link';
 
 type ManufacturerProps = {
-  manufacturer: any;
+    manufacturer: any;
 };
 
 const Details: React.FC<ManufacturerProps> = ({ manufacturer }) => {
   const { name, slug, website, image, cover_image, socials } =
-    manufacturer ?? {};
+  manufacturer ?? {};
 
   return (
     <div className="mb-12 flex w-full flex-col border border-gray-200 md:flex-row xl:mb-20">

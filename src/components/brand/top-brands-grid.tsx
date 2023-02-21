@@ -8,6 +8,7 @@ import ManufacturerLoader from '@/components/ui/loaders/manufacturer-loader';
 import rangeMap from '@/lib/range-map';
 import AuthorCard from "@/components/ui/author-card";
 import Link from '@/components/ui/link';
+import BrandCard from "@/components/brand/card";
 
 const breakpoints = {
     320: {
@@ -70,7 +71,7 @@ const TopBrandsGrid: React.FC = () => {
                             breakpoints={breakpoints}
                             spaceBetween={30}
                         >
-                            {(item) => <AuthorCard item={item}/>}
+                            {(item) => <BrandCard item={item}/>}
                         </Carousel>
                     </div>
                 )}

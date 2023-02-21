@@ -20,7 +20,7 @@ const CartCounterButton = dynamic(
   { ssr: false }
 );
 
-export default function Brand({ manufacturer, variables }: any) {
+export default function Manufacturer({ manufacturer, variables }: any) {
   const { t } = useTranslation('common');
   const { query } = useRouter();
 
@@ -89,4 +89,4 @@ const GetLayout = (page: React.ReactElement) => {
     </GeneralLayout>
   );
 };
-Brand.getLayout = GetLayout;
+Manufacturer.getLayout = GetLayout;
