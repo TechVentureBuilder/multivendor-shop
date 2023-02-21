@@ -914,3 +914,6 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
     color: #ffffff;
     column-gap: 15px;
 }
+.footer-bg{
+    background: #19191B;
+}

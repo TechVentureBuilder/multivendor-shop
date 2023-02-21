@@ -33,7 +33,6 @@ export default function IndexLayout({ variables }: HomePageProps) {
                     />
                 </SectionBlock>
                 <TopManufacturersGrid />
-                <CallToAction />
             </main>
         </div>
     );
