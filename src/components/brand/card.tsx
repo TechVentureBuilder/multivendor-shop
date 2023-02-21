@@ -8,17 +8,17 @@ import isEmpty from 'lodash/isEmpty';
 import { getIcon } from '@/lib/get-icon';
 import * as socialIcons from '@/components/icons/social';
 
-interface ManufacturerProps {
+interface BrandProps {
   item: any;
   className?: string;
 }
 
-const ManufacturerCard: React.FC<ManufacturerProps> = ({ item, className }) => {
+const BrandCard: React.FC<BrandProps> = ({ item, className }) => {
   const { t } = useTranslation();
 
   return (
     <Link
-      href={Routes.manufacturer(item?.slug)}
+      href={Routes.brand(item?.slug)}
       className={cn(
         'relative flex cursor-pointer items-center rounded border border-gray-200 bg-white p-5 shadow-md',
         className
@@ -80,4 +80,4 @@ const ManufacturerCard: React.FC<ManufacturerProps> = ({ item, className }) => {
   );
 };
 
-export default ManufacturerCard;
+export default BrandCard;

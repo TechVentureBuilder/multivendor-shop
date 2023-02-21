@@ -1,11 +1,11 @@
 import { getLayout as getSiteLayout } from '@/components/layouts/layout';
 import { useTranslation } from 'next-i18next';
 import Search from '@/components/ui/search/search';
-import ManufacturersGrid from '@/components/manufacturer/manufacturers-grid';
+import BrandsGrid from '@/components/brand/brands-grid';
 import { Fragment } from 'react';
 export { getStaticProps } from '@/framework/manufacturers-page.ssr';
 
-export default function ManufacturersPage() {
+export default function BrandsPage() {
   const { t } = useTranslation('common');
   return (
     <Fragment>
@@ -25,7 +25,7 @@ export default function ManufacturersPage() {
           />
         </div>
       </div>
-      <ManufacturersGrid />
+      <BrandsGrid />
     </Fragment>
   );
 }
@@ -39,4 +39,4 @@ const getLayout = (page: React.ReactElement) =>
     </div>
   );
 
-ManufacturersPage.getLayout = getLayout;
+BrandsPage.getLayout = getLayout;

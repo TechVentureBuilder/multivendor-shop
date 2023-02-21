@@ -3,6 +3,10 @@ import { siteSettings } from '@/config/site';
 import Link from '@/components/ui/link';
 import Logo from '@/components/ui/logo';
 import SubscriptionWidget from '@/components/settings/subscribe-to-newsletter';
+import cn from "classnames";
+import {Image} from "@/components/ui/image";
+import {logoPlaceholder} from "@/lib/placeholders";
+import WhiteLogo from '@/assets/logo-white.png'
 
 const Footer = () => {
   const { t } = useTranslation('common');
@@ -12,7 +16,17 @@ const Footer = () => {
       <div className="grid w-full grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6 pt-16 md:grid-cols-3 lg:pt-24 lg:pb-16 xl:grid-cols-[repeat(auto-fill,minmax(220px,1fr))] xl:gap-8 2xl:grid-cols-5">
         <div className="flex flex-col">
           <div className="mb-[2px] flex h-16 items-start">
-            <Logo />
+            <Link href="/" className="inline-flex">
+                <span className="relative h-10 w-32 overflow-hidden md:w-40">
+                  <Image
+                      src={WhiteLogo}
+                      alt="Funune"
+                      layout="fill"
+                      objectFit="contain"
+                      loading="eager"
+                  />
+                </span>
+            </Link>
           </div>
 
           <address className="mb-7 text-sm not-italic text-heading text-white">

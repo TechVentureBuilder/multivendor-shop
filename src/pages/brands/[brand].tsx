@@ -1,7 +1,7 @@
 import { FilterIcon } from '@/components/icons/filter-icon';
 import MobileNavigation from '@/components/layouts/mobile-navigation';
 import GeneralLayout from '@/components/layouts/_general';
-import Details from '@/components/manufacturer/details';
+import Details from '@/components/brand/details';
 import { Grid } from '@/components/products/grid';
 import SidebarFilter from '@/components/search-view/sidebar-filter';
 import { useProducts } from '@/framework/product';
@@ -20,7 +20,7 @@ const CartCounterButton = dynamic(
   { ssr: false }
 );
 
-export default function Manufacturer({ manufacturer, variables }: any) {
+export default function Brand({ manufacturer, variables }: any) {
   const { t } = useTranslation('common');
   const { query } = useRouter();
 
@@ -89,4 +89,4 @@ const GetLayout = (page: React.ReactElement) => {
     </GeneralLayout>
   );
 };
-Manufacturer.getLayout = GetLayout;
+Brand.getLayout = GetLayout;

@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 interface ManufacturersGridProps {
   limit?: number;
 }
-const ManufacturersGrid: React.FC<ManufacturersGridProps> = ({
+const BrandsGrid: React.FC<ManufacturersGridProps> = ({
   limit = MANUFACTURERS_PER_PAGE,
 }) => {
   const { t } = useTranslation('common');
@@ -54,4 +54,4 @@ const ManufacturersGrid: React.FC<ManufacturersGridProps> = ({
   );
 };
 
-export default ManufacturersGrid;
+export default BrandsGrid;

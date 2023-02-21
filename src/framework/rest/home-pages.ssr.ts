@@ -104,7 +104,7 @@ export const getStaticProps: GetStaticProps<
     limit: CATEGORIES_PER_PAGE,
     language: locale,
     parent:
-      types.find((t) => t.slug === pageType)?.settings.layoutType === 'minimal'
+      types.find((t) => t.slug === pageType)?.settings.layoutType === 'minimal' || types.find((t) => t.slug === pageType)?.settings.layoutType === 'default'
         ? 'all'
         : 'null',
   };
@@ -132,15 +132,3 @@ export const getStaticProps: GetStaticProps<
     revalidate: 120,
   };
 };
-
-/* Fix : locales: 14kB,
-popularProducts: 30kB,
-category: 22kB,
-groups: 8kB,
-group: 2kB,
-settings: 2kB,
-perProduct: 4.2 * 30 = 120kB,
-total = 14 + 30 + 22 + 8 + 2 + 2 + 120 = 198kB
-others: 225 - 198 = 27kB
-
- */

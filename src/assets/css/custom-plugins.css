@@ -914,6 +914,39 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
     color: #ffffff;
     column-gap: 15px;
 }
-.footer-bg{
+
+.footer-bg {
     background: #19191B;
+}
+
+.group-grid-item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 30%;
+    position: relative;
+}
+
+.group-grid-item .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.group-grid-item .description .des-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.5);
+    padding: 3rem;
+}
+.group-grid-item .description .des-wrapper p{
+    font-size: 4.5rem;
+    color: #ffffff;
+    line-height: 1;
 }
