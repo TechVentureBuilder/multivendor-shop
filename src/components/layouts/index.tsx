@@ -4,7 +4,6 @@ import Categories from '@/components/categories/categories';
 import CallToAction from '@/components/cta/call-to-action';
 import GroupProducts from '@/components/products/group-products';
 import PopularProductsGrid from '@/components/products/popular-products';
-import TopAuthorsGrid from '@/components/author/top-authors-grid';
 import StaticBanner from '@/components/banners/static-banner';
 import TopManufacturersGrid from '@/components/manufacturer/top-manufacturers-grid';
 import { useTranslation } from 'next-i18next';
@@ -33,7 +32,6 @@ export default function IndexLayout({ variables }: HomePageProps) {
                         }}
                     />
                 </SectionBlock>
-                <TopAuthorsGrid />
                 <TopManufacturersGrid />
                 <CallToAction />
             </main>
