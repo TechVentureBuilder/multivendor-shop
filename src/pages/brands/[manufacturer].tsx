@@ -33,8 +33,8 @@ export default function Manufacturer({ manufacturer, variables }: any) {
     <>
       <div className="flex w-full flex-col">
         <Details manufacturer={manufacturer} />
-        <h2 className="mb-8 text-3xl font-semibold tracking-tight text-heading">
-          {t('text-books')}
+        <h2 className="mb-8 text-3xl font-semibold tracking-tight text-heading capitalize">
+          {t('text-products')}
         </h2>
         <Grid
           products={productsItem}

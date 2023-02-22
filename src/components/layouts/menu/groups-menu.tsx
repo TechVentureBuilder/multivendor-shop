@@ -146,7 +146,7 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
                             {
                                 groups?.map(({id, name, slug,}) => (
                                     <li key={id}>
-                                        <Link href={slug}>
+                                        <Link href={`/${slug}`}>
                                             {name}
                                         </Link>
                                     </li>
